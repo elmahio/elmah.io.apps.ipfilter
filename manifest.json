@@ -1,0 +1,24 @@
+{
+	"variables": [{
+		"key": "from",
+		"name": "From",
+		"description": "IP address to search from (included)",
+		"example": "153.201.183.0",
+		"type": "text",
+		"required": true
+	},{
+		"key": "to",
+		"name": "To",
+		"description": "IP address to search to (included)",
+		"example": "153.201.183.255",
+		"type": "text",
+		"required": true
+	}],
+	"rule": {
+		"title": "Ignore from IP addresses.",
+		"query": "remoteAddr:[\"$from\" TO \"$to\"]",
+		"then": {
+			"type": "ignore"
+		}
+	}
+}
